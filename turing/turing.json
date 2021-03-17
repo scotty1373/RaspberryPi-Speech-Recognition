@@ -1,0 +1,24 @@
+{
+    "perception":
+    {
+        "inputText":
+        {
+            "text": ""
+        },
+
+        "selfInfo":
+        {
+            "location":
+            {
+                "city": "西安",
+                "province": "陕西",
+                "street": "长安区"
+            }
+        }
+    },
+    "userInfo":
+    {
+        "apiKey": "abe70a8c31114423ac516e1b30ac2eb2",
+        "userId": "703486"
+    }
+}
