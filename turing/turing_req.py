@@ -10,7 +10,7 @@ class TuringDome():
         self.json_path = json_path
         self.api_url = api_url
         # self.text_input = input('请输入我的问话\n我：')
-        self.text_input = input('User：')
+        self.text_input = input('User:')
 
     def readJson(self):
         '''获取json文件'''
@@ -47,7 +47,7 @@ class TuringDome():
             print('code：' + str(intent_code))
             print('请查阅api文档检查报错信息')
         # print('Turing的回答：')
-        print('Turing_Scotty：' + results_text)
+        print('Turing_Tuesday:' + results_text)
 
     def talkToTheTuring(self):
         #self.text_input = input('请输入我的问话\n我：')
