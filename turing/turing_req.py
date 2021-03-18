@@ -2,8 +2,8 @@
 import json
 import urllib.request
 
-# api_url = "http://openapi.tuling123.com/openapi/api/v2"
-# json_path = 'turing.json'
+api_url = "http://openapi.tuling123.com/openapi/api/v2"
+json_path = 'turing.json'
 
 class TuringDome():
     def __init__(self,json_path="",api_url=""):
