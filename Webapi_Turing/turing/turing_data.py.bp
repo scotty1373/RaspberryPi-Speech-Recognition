@@ -1,0 +1,30 @@
+#-*- coding: utf-8 -*-
+import turing_req as Tu
+import iat_ws_python3 as iat
+import websocket
+import ssl
+
+api_url = 'http://openapi.tuling123.com/openapi/api/v2'
+json_path = 'turing.json'
+
+if __name__ == "__main__":
+    # time1 = datetime.now()
+    global mesg_recv
+    while True:
+        websocket.enableTrace(False) #打印连接信息
+        wsUrl = iat.url
+        ws = websocket.WebSocketApp(wsUrl, on_message=iat.on_message, on_error=iat.on_error, on_close=iat.on_close)
+        ws.on_open = iat.on_open #函数传递，返回到websocketapp中回调
+        ws.run_forever(sslopt={"cert_reqs": ssl.CERT_NONE}, skip_utf8_validation=True)
+        #time2 = datetime.now()
+        data = mesg_recv["data"]["result"]["ws"]
+        mesg_split = ''
+        for i in data:
+            for j in i['cw']:
+                mesg_split += j['w'] 
+        # print("global var: ", mesg_split)   
+        # print(time2-time1)
+
+        ack = Tu.TuringDome(json_path, api_url)
+        ack.talkToTheTuring(mesg_split)
+        
