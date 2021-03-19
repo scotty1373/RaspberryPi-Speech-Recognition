@@ -57,7 +57,7 @@ class TuringDome():
                 # self.text_input = input('请输入我的问话\n我：')
                 self.text_input = input('User：')
             else:
-                print("*****结束对话！*****")
+                print("------offline------")
                 break
 
 # if __name__ == '__main__':
