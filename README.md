@@ -1,6 +1,6 @@
 # RaspberryPi-Speech-Recognition
 
-In the early stage, by use official tools to realize voice wake-up and text reply. In the next stage, replace the voice wake-up by Kaldi.
+In the early stage, by using official tools to realize voice wake-up and text reply. In the next stage, replace the voice wake-up by Kaldi.
 
 ### voice wake-up tools：
 
