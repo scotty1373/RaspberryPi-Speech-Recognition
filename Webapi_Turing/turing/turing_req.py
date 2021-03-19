@@ -46,16 +46,16 @@ class TuringDome():
         # print('Turing的回答：')
         print('Turing_reply：' + results_text)
 
-    # def talkToTheTuring(self, Recognized):
-    #     while True:
-            # if self.text_input != "exit":
-            #     self.getTuringResponse()
-            #     self.text_input = Recognized
-            #     print("User: " + Recognized)
-            #     # self.text_input = input('User：')
-            # else:
-            #     print("*****结束对话！*****")
-            #     break
+    def talkToTheTuring(self, Recognized):
+        while True:
+            if self.text_input != "exit":
+                self.getTuringResponse()
+                self.text_input = Recognized
+                print("User: " + Recognized)
+                # self.text_input = input('User：')
+            else:
+                print("*****结束对话！*****")
+                break
 
 # if __name__ == '__main__':
 #     #pass

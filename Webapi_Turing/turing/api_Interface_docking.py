@@ -168,6 +168,16 @@ def Feedback():
             mesg_split += j['w']
     return mesg_split
 
+def talkToTheTuring():
+    while True:
+        text_input = input("User: ")
+        if text_input != "exit":
+            ack.text_input = text_input
+            ack.getTuringResponse()
+        else:
+            print("*****Offline！*****")
+            break
+
 if __name__ == "__main__":
     i = 0
     ack = Tu.TuringDome(json_path, api_url)
@@ -179,14 +189,15 @@ if __name__ == "__main__":
                     APIKey=APIKey,
                     AudioFile=PATH[i])
         flag_input = input("唤醒? (y/n): ")
-        if flag_input != 'exit':
+        if flag_input == 'n':
+            break
+        else:
             Recognized = Feedback()
             print("User: " + Recognized)
             ack.text_input = Recognized
-            ack.getTuringResponse()
-        else:
-            pass
+            ack.getTuringResponse()         
         i += 1
+    talkToTheTuring()
 
 
 
