@@ -43,7 +43,7 @@ json_path = 'turing.json'
 APPID = '60519891'
 APISecret = '59c150bbdd329b008cb8ed5ce6913036'
 APIKey = '6f2c835ba57b219ccfcf779068a6b273'
-PATH = './iat_pcm_16k.pcm'
+PATH = ['./iat_pcm_16k.pcm', './16bit_weather_xian.pcm', './16bit_weather_Tianjin.pcm']
 
 STATUS_FIRST_FRAME = 0  # 第一帧的标识
 STATUS_CONTINUE_FRAME = 1  # 中间帧标识
@@ -191,11 +191,15 @@ def Feedback():
     return mesg_split
 
 if __name__ == "__main__":
+    i = 0
     ack = Tu.TuringDome(json_path, api_url)
-    wsParam = Ws_Param(APPID=APPID, APISecret=APISecret,
-                APIKey=APIKey,
-                AudioFile=PATH)
-    while True:
+    # wsParam = Ws_Param(APPID=APPID, APISecret=APISecret,
+    #             APIKey=APIKey,
+    #             AudioFile=PATH)
+    while i<3:
+        wsParam = Ws_Param(APPID=APPID, APISecret=APISecret,
+                    APIKey=APIKey,
+                    AudioFile=PATH[i])
         flag_input = input("唤醒? (y/n): ")
         if flag_input != 'exit':
             Recognized = Feedback()
@@ -204,6 +208,8 @@ if __name__ == "__main__":
             ack.getTuringResponse()
         else:
             pass
+        i += 1
+
 
 
 
